@@ -1,0 +1,27 @@
+#include <iostream>
+#include <algorithm> 
+using namespace std;
+
+int main() {
+    int so_PT;
+    cin >> so_PT;  
+
+    int dayso[100000]; 
+    for (int i = 0; i < so_PT; i++) {
+        cin >> dayso[i];
+    }
+    sort(dayso, dayso + so_PT);
+
+    bool laHoanVi = true; 
+    for (int i = 0; i < so_PT; i++) {
+        if (dayso[i] != i + 1) { 
+            laHoanVi = false; 
+            break;
+        }
+    }
+
+    if (laHoanVi) cout << "YES";
+    else cout << "NO";
+
+    return 0;
+}
